@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Roulette Game</h1>
+
+        <!-- Default Login Page -->
+        <div id="login-section">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <input type="checkbox" id="login-show-password"> Show Password
+                <button type="submit">Login</button>
+            </form>
+            <button id="go-to-register">Register</button>
+        </div>
+
+        <!-- Registration Form -->
+        <div id="register-section" style="display: none;">
+            <h2>Register</h2>
+            <form id="register-form">
+                <input type="text" id="register-username" placeholder="Username" required>
+                <input type="email" id="register-email" placeholder="Email" required>
+                <input type="password" id="register-password" placeholder="Password" required>
+                <input type="checkbox" id="register-show-password"> Show Password
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <!-- Betting Section -->
+        <div id="bet-section" style="display: none;">
+            <h2>Place Bet</h2>
+            <p>Balance: $<span id="balance">0</span></p>
+            <form id="bet-form">
+                <input type="number" id="bet-amount" placeholder="Bet Amount" required>
+                <select id="bet-category" required>
+                    <option value="">Select Bet Category</option>
+                    <option value="number">Number</option>
+                    <option value="color">Color</option>
+                    <option value="evenodd">Even/Odd</option>
+                    <option value="dozen">Dozen</option>
+                    <option value="column">Column</option>
+                    <option value="highlow">High/Low</option>
+                </select>
+                <select id="bet-type" required>
+                    <option value="">Select Bet Type</option>
+                </select>
+                <button type="submit">Place Bet</button>
+            </form>
+        </div>
+
+        <div id="results-container" style="display: none;">
+            <h2>Bet Result</h2>
+            <div id="results"></div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/socket.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+#game-container {
+    width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+#bet-section input, #bet-section select, #bet-section button {
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+}
+
+#results-container {
+    margin-top: 20px;
+}
+
+#results-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#results p {
+    font-size: 1em;
+    margin: 5px 0;
+}

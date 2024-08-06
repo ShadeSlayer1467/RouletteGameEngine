@@ -1,0 +1,36 @@
+roulette-game-server/
+│
+├── src/
+│   ├── app.js                       # Depends on routes and middlewares
+│   ├── server.js                    # Depends on app.js and starts the server
+│   │
+│   ├── api/
+│   │   └── controllers/
+│   │       ├── gameController.js    # Depends on services/gameService.js
+│   │       └── userController.js    # Depends on services/userService.js
+│   │
+│   ├── config/
+│   │   ├── db.js                    # Standalone, but often requires environment variables from config/index.js
+│   │   └── index.js                 # Standalone, centralizes configuration exports
+│   │
+│   ├── models/
+│   │   ├── userModel.js             # Standalone, but often used by services/userService.js
+│   │   ├── gameModel.js             # Standalone, but often used by services/gameService.js
+│   │   └── transactionModel.js      # Standalone, but potentially used by services/gameService.js
+│   │
+│   ├── routes/
+│   │   ├── gameRoutes.js            # Depends on api/controllers/gameController.js
+│   │   └── userRoutes.js            # Depends on api/controllers/userController.js
+│   │
+│   ├── services/
+│   │   ├── authService.js           # Depends on models/userModel.js for database operations
+│   │   ├── gameService.js           # Depends on models/gameModel.js and models/transactionModel.js
+│   │   └── userService.js           # Depends on models/userModel.js
+│   │
+│   └── utils/
+│       ├── logger.js                # Standalone, generic logging across the application
+│       └── helpers.js               # Standalone, utilities used across various files as needed
+│
+├── public/                          # Standalone, served by app.js, contains static client files
+│
+└── test/                            # Depends on similar structures as their production counterparts
